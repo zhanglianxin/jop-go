@@ -1,0 +1,5 @@
+[app]
+
+[jop]
+    AppKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    SecretKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
