@@ -22,13 +22,13 @@
 ├── README.md
 ├── config
 │   └── config.go # 加载配置
-├── config_example.toml
+├── config_example.toml # 配置示例
 ├── jop
 │   └── jop.go # 业务逻辑
 ├── jop-sdk
 │   ├── client-new.go # 同 client.go，把系统参数封装为结构体
 │   ├── client.go # 摘要签名、基础请求
-│   ├── client_test.go # 配置示例
+│   ├── client_test.go
 │   ├── jop-api.go # 接口业务参数封装
 │   ├── jop-api_test.go
 │   └── vars.go # 包内公共变量
