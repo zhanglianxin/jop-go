@@ -28,7 +28,15 @@ func (u *Union) QueryJingfenGoods(params map[string]interface{}) []byte {
 	checkRequiredKeys([]string{"goodsReq", "eliteId"}, params)
 	param := NewParam("jd.union.open.order.query", "1.0")
 	param.ParamJson = params
-	_, body := makeRequestNew("jd.union.open.order.query", param)
+	_, body := makeRequestNew("GET", param)
+	return body
+}
+
+func (u *Union) GetCommonPromotion(params map[string]interface{}) ([]byte) {
+	checkRequiredKeys([]string{"promotionCodeReq", "materialId", "siteId"}, params)
+	param := NewParam("jd.union.open.promotion.common.get", "1.0")
+	param.ParamJson = params
+	_, body := makeRequestNew("POST", param)
 	return body
 }
 

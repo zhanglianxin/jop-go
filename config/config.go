@@ -13,6 +13,7 @@ type Config struct {
 	Jop *struct {
 		AppKey    string
 		SecretKey string
+		SiteId    string
 	}
 }
 

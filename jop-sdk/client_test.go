@@ -7,6 +7,10 @@ import (
 	"github.com/zhanglianxin/jop-go/config"
 )
 
+var (
+	siteId string
+)
+
 func init() {
 	logrus.SetLevel(logrus.DebugLevel)
 	logrus.SetFormatter(&logrus.TextFormatter{
@@ -15,13 +19,14 @@ func init() {
 	conf := config.GetConfig("../config.toml")
 	AppKey = conf.Jop.AppKey
 	SecretKey = conf.Jop.SecretKey
+	siteId = conf.Jop.SiteId
 }
 
 func TestMakeRequest(t *testing.T) {
 	paramBs, _ := json.Marshal(map[string]interface{}{
 		"promotionCodeReq": map[string]interface{}{
 			"materialId": "https://item.jd.com/23484023378.html",
-			"siteId":     "1909992923",
+			"siteId":     siteId,
 		},
 	})
 	params := map[string]string{
@@ -38,7 +43,7 @@ func TestMakeRequestNew(t *testing.T) {
 	param.ParamJson = map[string]interface{}{
 		"promotionCodeReq": map[string]interface{}{
 			"materialId": "https://item.jd.com/23484023378.html",
-			"siteId":     "1909992923",
+			"siteId":     siteId,
 		},
 	}
 	header, body := makeRequestNew("POST", param)
